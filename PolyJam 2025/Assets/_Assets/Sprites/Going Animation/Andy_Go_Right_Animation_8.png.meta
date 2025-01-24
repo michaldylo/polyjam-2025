@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Andy_Go_Right_Animation_8_0: 6653328463614804692
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
