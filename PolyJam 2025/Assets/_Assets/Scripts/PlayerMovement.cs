@@ -7,10 +7,16 @@ public class PlayerMovement : MonoBehaviour
     private float _horizontalMove = 0f;
     private bool _jump = false;
     private bool _crouch = false;
+    private int _playerId;
+
+    private void Awake()
+    {
+        _playerId = GetComponent<Player>().Id;
+    }
 
     private void Update()
     {
-        _horizontalMove = Input.GetAxisRaw("Horizontal") * _moveSpeed;
+        _horizontalMove = Input.GetAxisRaw("Horizontal" + _playerId) * _moveSpeed;
 
         if (Input.GetButtonDown("Jump"))
         {
