@@ -42,25 +42,6 @@ public class Dialogue : MonoBehaviour
         }
     }
 
-    // private void OnTriggerStay2D(Collider2D other)
-    // {
-    //     if (other.gameObject.CompareTag("PlayerTag"))
-    //     {
-    //         if (Keyboard.current.eKey.wasPressedThisFrame)
-    //         {
-    //             Debug.Log("E");
-    //             _interactionTextImage.enabled = false;
-    //             _dialogueImage.enabled = true;
-    //             _dialogueImage.sprite = _dialogueSprites[_dialogueIndex];
-
-    //             if (_dialogueIndex < _dialogueSprites.Length - 1)
-    //             {
-    //                 ++_dialogueIndex;
-    //             }
-    //         }
-    //     }
-    // }
-
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("PlayerTag"))
@@ -71,15 +52,4 @@ public class Dialogue : MonoBehaviour
             _dialogueIndex = 0;
         }
     }
-
-    // private IEnumerator ShowDialogue()
-    // {
-    //     _dialogueImage.sprite = _dialogueSprites[_dialogueIndex];
-    //     yield return new WaitForSeconds(0.1f);
-
-    //     if (_dialogueIndex < _dialogueSprites.Length - 1)
-    //     {
-    //         ++_dialogueIndex;
-    //     }
-    // }
 }
