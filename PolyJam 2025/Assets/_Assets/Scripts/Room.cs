@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Room : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class Room : MonoBehaviour
     [SerializeField] private Sprite[] _toolIcons = new Sprite[5];
     [SerializeField] private SpriteRenderer _toolIconRenderer;
     private bool _playerIsInRange = false;
+    private InputAction _interact1Action;
+    private InputAction _interact2Action;
+    private int _playerId;
 
     private void Awake()
     {
@@ -17,6 +21,9 @@ public class Room : MonoBehaviour
 
         if (_isDirty)
         {
+            _interact1Action = InputSystem.actions.FindAction("Interact1");
+            _interact2Action = InputSystem.actions.FindAction("Interact2");
+
             int toolId = UnityEngine.Random.Range(0, 5);
 
             switch (toolId)
@@ -46,7 +53,14 @@ public class Room : MonoBehaviour
     {
         if (_playerIsInRange)
         {
-            
+            if (_playerId == 1 && _interact1Action.WasPressedThisFrame())
+            {
+                Debug.Log("Cleaning in progress...");
+            }
+            else if (_playerId == 2 && _interact2Action.WasPressedThisFrame())
+            {
+                Debug.Log("Cleaning in progress...");
+            }
         }
     }
 
@@ -55,7 +69,8 @@ public class Room : MonoBehaviour
         if (other.gameObject.CompareTag("PlayerTag"))
         {
             ControllableCharacter.CharacterTypeEnum characterType = other.gameObject.GetComponent<ControllableCharacter>().CharacterType;
-            
+            _playerId = other.gameObject.GetComponent<ControllableCharacter>().PlayerId;
+
             if (PlayerHasRightTool(characterType))
             {
                 _playerIsInRange = true;

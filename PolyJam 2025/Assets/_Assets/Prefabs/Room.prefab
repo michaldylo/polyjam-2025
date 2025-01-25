@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4662844016629974179}
   - component: {fileID: 2849595719693702963}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Room Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 2909833325108114742}
   - component: {fileID: 4057700791045140833}
   - component: {fileID: 6881422614542275379}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Room
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -204,7 +204,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7739289784485839325}
   - component: {fileID: 4209080783694992532}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tool Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
