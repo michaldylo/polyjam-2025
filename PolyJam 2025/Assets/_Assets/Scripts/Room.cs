@@ -6,7 +6,7 @@ public class Room : MonoBehaviour
 {
     [SerializeField] private Sprite[] _sprites = new Sprite[5];
     [SerializeField] private SpriteRenderer _spriteRenderer;
-    private bool _isDirty;
+    public bool IsDirty { get; set; }
     private Tool.ToolType _neededTool;
     [SerializeField] private Sprite[] _toolIcons = new Sprite[5];
     [SerializeField] private SpriteRenderer _toolIconRenderer;
@@ -17,9 +17,9 @@ public class Room : MonoBehaviour
 
     private void Awake()
     {
-        _isDirty = Convert.ToBoolean(UnityEngine.Random.Range(0, 2));
+        IsDirty = Convert.ToBoolean(UnityEngine.Random.Range(0, 2));
 
-        if (_isDirty)
+        if (IsDirty)
         {
             _interact1Action = InputSystem.actions.FindAction("Interact1");
             _interact2Action = InputSystem.actions.FindAction("Interact2");

@@ -63,7 +63,7 @@
                     "name": "Crouch",
                     "type": "Button",
                     "id": "27c5f898-bc57-4ee1-8800-db469aca5fe3",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -108,6 +108,24 @@
                     "name": "Float",
                     "type": "Button",
                     "id": "613122c8-cad9-4232-9cd4-d641193941d3",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ChangeCharacter1",
+                    "type": "Button",
+                    "id": "310ba53e-ab8d-471b-ad36-3484a0b479af",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ChangeCharacter2",
+                    "type": "Button",
+                    "id": "f834e490-3648-4f48-ab50-6f9d14de57a0",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -404,7 +422,7 @@
                 {
                     "name": "",
                     "id": "1c04ea5f-b012-41d1-a6f7-02e963b52893",
-                    "path": "<Keyboard>/e",
+                    "path": "<Keyboard>/f",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
@@ -503,11 +521,33 @@
                 {
                     "name": "",
                     "id": "5fe8123a-8bb3-4a5a-8542-5f208a2bcd07",
-                    "path": "<Keyboard>/space",
+                    "path": "<Keyboard>/rightCtrl",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Keyboard&Mouse",
                     "action": "Interact2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d891ccfb-da6a-4df0-ab1f-b2d177ce8eda",
+                    "path": "<Keyboard>/leftShift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "ChangeCharacter1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "aa60cf54-45c6-46de-acaf-46701c72847e",
+                    "path": "<Keyboard>/rightShift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "ChangeCharacter2",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
