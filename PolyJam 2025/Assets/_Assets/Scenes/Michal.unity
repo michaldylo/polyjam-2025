@@ -1023,6 +1023,7 @@ GameObject:
   - component: {fileID: 2101062720}
   - component: {fileID: 2101062722}
   - component: {fileID: 2101062723}
+  - component: {fileID: 2101062724}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -1162,7 +1163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _controller: {fileID: 2101062718}
-  _runSpeed: 40
+  _moveSpeed: 40
 --- !u!114 &2101062723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1177,6 +1178,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _itemTags:
   - BubbleGum
+--- !u!114 &2101062724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2101062717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf02890c5a6686348bdb25333f5f2658, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _floatForce: 400
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
