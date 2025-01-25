@@ -6,17 +6,10 @@ public class Room : MonoBehaviour
     [SerializeField] private Sprite[] _sprites = new Sprite[5];
     [SerializeField] private SpriteRenderer _spriteRenderer;
     private bool _isDirty;
-
-    // private bool _needsSponge = false;
-    // private bool _needsMop = false;
-    // private bool _needsVacuumCleaner = false;
-    // private bool _needsTrashCan = false;
-    // private bool _needsFeatherDuster = false;
-    private bool[] _needsTool = { false, false, false, false, false };
-
+    private Tool.ToolType _neededTool;
     [SerializeField] private Sprite[] _toolIcons = new Sprite[5];
     [SerializeField] private SpriteRenderer _toolIconRenderer;
-    private int _toolId;
+    private bool _playerIsInRange = false;
 
     private void Awake()
     {
@@ -24,27 +17,36 @@ public class Room : MonoBehaviour
 
         if (_isDirty)
         {
-            _toolId = UnityEngine.Random.Range(0, 5);
+            int toolId = UnityEngine.Random.Range(0, 5);
 
-            _needsTool[_toolId] = true;
-            // switch (toolId)
-            // {
-            //     case 0:
-            //         _needsSponge = true;
-            //         break;
-            //     case 1:
-            //         _needsMop = true;
-            //         break;
-            //     case 2:
-            //         _needsVacuumCleaner = true;
-            //         break;
-            //     case 3:
-            //         _needsTrashCan = true;
-            //         break;
-            //     case 4:
-            //         _needsFeatherDuster = true;
-            //         break;
-            // }
+            switch (toolId)
+            {
+                case 0:
+                    _neededTool = Tool.ToolType.Sponge;
+                    break;
+                case 1:
+                    _neededTool = Tool.ToolType.Mop;
+                    break;
+                case 2:
+                    _neededTool = Tool.ToolType.VacuumCleaner;
+                    break;
+                case 3:
+                    _neededTool = Tool.ToolType.TrashCan;
+                    break;
+                case 4:
+                    _neededTool = Tool.ToolType.FeatherDuster;
+                    break;
+            }
+
+            _toolIconRenderer.sprite = _toolIcons[toolId];
+        }
+    }
+
+    private void Update()
+    {
+        if (_playerIsInRange)
+        {
+            
         }
     }
 
@@ -53,27 +55,44 @@ public class Room : MonoBehaviour
         if (other.gameObject.CompareTag("PlayerTag"))
         {
             ControllableCharacter.CharacterTypeEnum characterType = other.gameObject.GetComponent<ControllableCharacter>().CharacterType;
-
-            if (_toolId == 0 && characterType == ControllableCharacter.CharacterTypeEnum.Son1)
+            
+            if (PlayerHasRightTool(characterType))
             {
+                _playerIsInRange = true;
+            }
+        }
+    }
 
-            }
-            else if (_toolId == 1 && characterType == ControllableCharacter.CharacterTypeEnum.Mom)
-            {
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        _playerIsInRange = false;
+    }
 
-            }
-            else if (_toolId == 2 && characterType == ControllableCharacter.CharacterTypeEnum.Dad)
-            {
-
-            }
-            else if (_toolId == 3 && characterType == ControllableCharacter.CharacterTypeEnum.Son2)
-            {
-
-            }
-            else if (_toolId == 4 && characterType == ControllableCharacter.CharacterTypeEnum.Daughter)
-            {
-                
-            }
+    private bool PlayerHasRightTool(ControllableCharacter.CharacterTypeEnum characterType)
+    {
+        if (_neededTool == Tool.ToolType.Sponge && characterType == ControllableCharacter.CharacterTypeEnum.Son1)
+        {
+            return true;
+        }
+        else if (_neededTool == Tool.ToolType.Mop && characterType == ControllableCharacter.CharacterTypeEnum.Mom)
+        {
+            return true;
+        }
+        else if (_neededTool == Tool.ToolType.VacuumCleaner && characterType == ControllableCharacter.CharacterTypeEnum.Dad)
+        {
+            return true;
+        }
+        else if (_neededTool == Tool.ToolType.TrashCan && characterType == ControllableCharacter.CharacterTypeEnum.Son2)
+        {
+            return true;
+        }
+        else if (_neededTool == Tool.ToolType.FeatherDuster && characterType == ControllableCharacter.CharacterTypeEnum.Daughter)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 }
