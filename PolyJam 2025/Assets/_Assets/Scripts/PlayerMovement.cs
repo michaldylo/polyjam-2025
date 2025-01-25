@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
-        _playerId = GetComponent<Player>().Id;
+        _playerId = GetComponent<ControllableCharacter>().PlayerId;
     }
 
     private void Update()

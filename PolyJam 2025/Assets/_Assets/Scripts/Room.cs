@@ -16,6 +16,7 @@ public class Room : MonoBehaviour
 
     [SerializeField] private Sprite[] _toolIcons = new Sprite[5];
     [SerializeField] private SpriteRenderer _toolIconRenderer;
+    private int _toolId;
 
     private void Awake()
     {
@@ -23,9 +24,9 @@ public class Room : MonoBehaviour
 
         if (_isDirty)
         {
-            int toolId = UnityEngine.Random.Range(0, 5);
+            _toolId = UnityEngine.Random.Range(0, 5);
 
-            _needsTool[toolId] = true;
+            _needsTool[_toolId] = true;
             // switch (toolId)
             // {
             //     case 0:
@@ -44,6 +45,35 @@ public class Room : MonoBehaviour
             //         _needsFeatherDuster = true;
             //         break;
             // }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("PlayerTag"))
+        {
+            ControllableCharacter.CharacterTypeEnum characterType = other.gameObject.GetComponent<ControllableCharacter>().CharacterType;
+
+            if (_toolId == 0 && characterType == ControllableCharacter.CharacterTypeEnum.Son1)
+            {
+
+            }
+            else if (_toolId == 1 && characterType == ControllableCharacter.CharacterTypeEnum.Mom)
+            {
+
+            }
+            else if (_toolId == 2 && characterType == ControllableCharacter.CharacterTypeEnum.Dad)
+            {
+
+            }
+            else if (_toolId == 3 && characterType == ControllableCharacter.CharacterTypeEnum.Son2)
+            {
+
+            }
+            else if (_toolId == 4 && characterType == ControllableCharacter.CharacterTypeEnum.Daughter)
+            {
+                
+            }
         }
     }
 }
