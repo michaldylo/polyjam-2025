@@ -26,4 +26,23 @@ public class Inventory : MonoBehaviour
             }
         }
     }
+
+    public bool HasItem(string itemTag)
+    {
+        if (_itemTags.Length > 0 && _itemPossesions.Length > 0)
+        {
+            for (int i = 0; i < _itemTags.Length; ++i)
+            {
+                if (_itemTags[i] == itemTag)
+                {
+                    if (_itemPossesions[i] == true)
+                    {
+                        return true;
+                    }
+                }
+            }
+        }
+
+        return false;
+    }
 }
