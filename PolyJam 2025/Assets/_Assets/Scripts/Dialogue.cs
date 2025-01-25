@@ -24,9 +24,16 @@ public class Dialogue : MonoBehaviour
         {
             _interactionTextImage.enabled = false;
             _dialogueImage.enabled = true;
-            _dialogueImage.sprite = _dialogueSprites[_dialogueIndex];
+            if (_dialogueIndex < _dialogueSprites.Length)
+            {
+                _dialogueImage.sprite = _dialogueSprites[_dialogueIndex];
+            }
+            else
+            {
+                _dialogueImage.enabled = false;
+            }
 
-            if (_dialogueIndex < _dialogueSprites.Length - 1)
+            if (_dialogueIndex < _dialogueSprites.Length)
             {
                 ++_dialogueIndex;
             }
