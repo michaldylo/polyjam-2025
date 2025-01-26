@@ -10,4 +10,7 @@ public class Tool : MonoBehaviour
         TrashCan,
         FeatherDuster
     }
+
+    [SerializeField] private float[] _cleanTime = new float[5];
+    public float[] CleanTime => _cleanTime;
 }

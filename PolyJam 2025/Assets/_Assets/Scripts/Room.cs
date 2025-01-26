@@ -1,4 +1,4 @@
-using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -20,34 +20,6 @@ public class Room : MonoBehaviour
     {
         _interact1Action = InputSystem.actions.FindAction("Interact1");
         _interact2Action = InputSystem.actions.FindAction("Interact2");
-
-        // IsDirty = Convert.ToBoolean(UnityEngine.Random.Range(0, 2));
-
-        if (IsDirty)
-        {
-            // int toolId = UnityEngine.Random.Range(0, 5);
-
-            // switch (toolId)
-            // {
-            //     case 0:
-            //         NeededTool = Tool.ToolType.Sponge;
-            //         break;
-            //     case 1:
-            //         NeededTool = Tool.ToolType.Mop;
-            //         break;
-            //     case 2:
-            //         NeededTool = Tool.ToolType.VacuumCleaner;
-            //         break;
-            //     case 3:
-            //         NeededTool = Tool.ToolType.TrashCan;
-            //         break;
-            //     case 4:
-            //         NeededTool = Tool.ToolType.FeatherDuster;
-            //         break;
-            // }
-
-            // _toolIconRenderer.sprite = _toolIcons[toolId];
-        }
     }
 
     private void Update()
@@ -56,11 +28,11 @@ public class Room : MonoBehaviour
         {
             if (_playerId == 1 && _interact1Action.WasPressedThisFrame())
             {
-                Debug.Log("Cleaning in progress...");
+                StartCoroutine(Clean(NeededTool));
             }
             else if (_playerId == 2 && _interact2Action.WasPressedThisFrame())
             {
-                Debug.Log("Cleaning in progress...");
+                StartCoroutine(Clean(NeededTool));
             }
         }
     }
@@ -110,5 +82,38 @@ public class Room : MonoBehaviour
         {
             return false;
         }
+    }
+
+    private IEnumerator Clean(Tool.ToolType neededTool)
+    {
+        float cleanTime;
+
+        switch (neededTool)
+        {
+            case Tool.ToolType.Sponge:
+                cleanTime = 4f;
+                break;
+            case Tool.ToolType.Mop:
+                cleanTime = 6f;
+                break;
+            case Tool.ToolType.VacuumCleaner:
+                cleanTime = 5f;
+                break;
+            case Tool.ToolType.TrashCan:
+                cleanTime = 3f;
+                break;
+            case Tool.ToolType.FeatherDuster:
+                cleanTime = 2f;
+                break;
+            default:
+                cleanTime = 2f;
+                break;
+        }
+
+        Debug.Log("Cleaning in progress... (" + cleanTime + " s)");
+        yield return new WaitForSeconds(cleanTime);
+        IsDirty = false;
+        ToolIconRenderer.sprite = null;
+        Debug.Log("Cleaning complete!");
     }
 }
