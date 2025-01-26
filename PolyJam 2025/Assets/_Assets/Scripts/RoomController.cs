@@ -14,7 +14,7 @@ public class RoomController : MonoBehaviour
     {
         for (int i = 0; i < _playerOneRooms.Length; ++i)
         {
-            bool isDirty = Convert.ToBoolean(UnityEngine.Random.Range(0, 2));
+            bool isDirty = Convert.ToBoolean(UnityEngine.Random.Range(0, 3));
             _playerOneRooms[i].GetComponent<Room>().IsDirty = isDirty;
             _playerTwoRooms[i].GetComponent<Room>().IsDirty = isDirty;
 
@@ -47,6 +47,7 @@ public class RoomController : MonoBehaviour
                 }
 
                 _playerOneRooms[i].GetComponent<Room>().ToolIconRenderer.sprite = _toolIcons[toolId];
+                _playerTwoRooms[i].GetComponent<Room>().ToolIconRenderer.sprite = _toolIcons[toolId];
             }
         }
     }
