@@ -21,6 +21,7 @@ public class Room : MonoBehaviour
     private InputAction _changeCharacter2Action;
     private BoxCollider2D _collider;
     private ControllableCharacter _character;
+    [SerializeField] private SpriteRenderer _bubbles;
 
     private void Awake()
     {
@@ -126,12 +127,14 @@ public class Room : MonoBehaviour
         }
 
         Debug.Log("Cleaning in progress... (" + cleanTime + " s)");
+        _bubbles.enabled = true;
         _character.IsBusy = true;
         yield return new WaitForSeconds(cleanTime);
         IsDirty = false;
         _collider.enabled = false;
         ToolIconRenderer.sprite = null;
         Debug.Log("Cleaning complete!");
+        _bubbles.enabled = false;
         _character.IsBusy = false;
     }
 
