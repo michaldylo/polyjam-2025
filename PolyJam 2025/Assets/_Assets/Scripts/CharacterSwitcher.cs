@@ -10,7 +10,8 @@ public class CharacterSwitcher : MonoBehaviour
     [SerializeField] private PlayerMovement[] _playerTwoCharacters = new PlayerMovement[5];
     private int[] _currentCharacterIndexes = { 0, 0 };
     [SerializeField] private Image[] _currentCharacterIcons = new Image[2];
-    [SerializeField] private Sprite[] _characterIconSprites = new Sprite[5];
+    [SerializeField] private Sprite[] _playerOneCharacterIconSprites = new Sprite[5];
+    [SerializeField] private Sprite[] _playerTwoCharacterIconSprites = new Sprite[5];
 
     private void Awake()
     {
@@ -51,14 +52,16 @@ public class CharacterSwitcher : MonoBehaviour
                 _playerOneCharacters[_currentCharacterIndexes[playerId - 1]].enabled = false;
                 _currentCharacterIndexes[playerId - 1] = (_currentCharacterIndexes[playerId - 1] + 1) % _playerOneCharacters.Length;
                 _playerOneCharacters[_currentCharacterIndexes[playerId - 1]].enabled = true;
+                _currentCharacterIcons[playerId - 1].sprite = _playerOneCharacterIconSprites[_currentCharacterIndexes[playerId - 1]];
                 break;
             case 2:
                 _playerTwoCharacters[_currentCharacterIndexes[playerId - 1]].enabled = false;
                 _currentCharacterIndexes[playerId - 1] = (_currentCharacterIndexes[playerId - 1] + 1) % _playerTwoCharacters.Length;
                 _playerTwoCharacters[_currentCharacterIndexes[playerId - 1]].enabled = true;
+                _currentCharacterIcons[playerId - 1].sprite = _playerTwoCharacterIconSprites[_currentCharacterIndexes[playerId - 1]];
                 break;
         }
 
-        _currentCharacterIcons[playerId - 1].sprite = _characterIconSprites[_currentCharacterIndexes[playerId - 1]];
+        
     }
 }
