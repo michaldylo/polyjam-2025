@@ -15,16 +15,25 @@ public class Room : MonoBehaviour
     private InputAction _interact1Action;
     private InputAction _interact2Action;
     private int _playerId;
+    private Tool _tool;
+    private bool _didFirstRangeCheck = false;
+    private InputAction _changeCharacter1Action;
+    private InputAction _changeCharacter2Action;
+    private BoxCollider2D _collider;
 
     private void Awake()
     {
         _interact1Action = InputSystem.actions.FindAction("Interact1");
         _interact2Action = InputSystem.actions.FindAction("Interact2");
+        _tool = GameObject.FindWithTag("ToolScript").GetComponent<Tool>();
+        _changeCharacter1Action = InputSystem.actions.FindAction("ChangeCharacter1");
+        _changeCharacter2Action = InputSystem.actions.FindAction("ChangeCharacter2");
+        _collider = GetComponent<BoxCollider2D>();
     }
 
     private void Update()
     {
-        if (_playerIsInRange)
+        if (IsDirty && _playerIsInRange)
         {
             if (_playerId == 1 && _interact1Action.WasPressedThisFrame())
             {
@@ -35,19 +44,24 @@ public class Room : MonoBehaviour
                 StartCoroutine(Clean(NeededTool));
             }
         }
+
+        if (_changeCharacter1Action.WasPressedThisFrame() || _changeCharacter2Action.WasPressedThisFrame())
+        {
+            _didFirstRangeCheck = false;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("PlayerTag"))
-        {
-            ControllableCharacter.CharacterTypeEnum characterType = other.gameObject.GetComponent<ControllableCharacter>().CharacterType;
-            _playerId = other.gameObject.GetComponent<ControllableCharacter>().PlayerId;
+        CheckIfPlayerIsInRange(other);
+    }
 
-            if (PlayerHasRightTool(characterType))
-            {
-                _playerIsInRange = true;
-            }
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (!_didFirstRangeCheck)
+        {
+            CheckIfPlayerIsInRange(other);
+            _didFirstRangeCheck = true;
         }
     }
 
@@ -91,19 +105,19 @@ public class Room : MonoBehaviour
         switch (neededTool)
         {
             case Tool.ToolType.Sponge:
-                cleanTime = 4f;
+                cleanTime = _tool.CleanTime[0];
                 break;
             case Tool.ToolType.Mop:
-                cleanTime = 6f;
+                cleanTime = _tool.CleanTime[1];
                 break;
             case Tool.ToolType.VacuumCleaner:
-                cleanTime = 5f;
+                cleanTime = _tool.CleanTime[2];
                 break;
             case Tool.ToolType.TrashCan:
-                cleanTime = 3f;
+                cleanTime = _tool.CleanTime[3];
                 break;
             case Tool.ToolType.FeatherDuster:
-                cleanTime = 2f;
+                cleanTime = _tool.CleanTime[4];
                 break;
             default:
                 cleanTime = 2f;
@@ -113,7 +127,22 @@ public class Room : MonoBehaviour
         Debug.Log("Cleaning in progress... (" + cleanTime + " s)");
         yield return new WaitForSeconds(cleanTime);
         IsDirty = false;
+        _collider.enabled = false;
         ToolIconRenderer.sprite = null;
         Debug.Log("Cleaning complete!");
+    }
+
+    private void CheckIfPlayerIsInRange(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("PlayerTag") && other.gameObject.GetComponent<PlayerMovement>().enabled)
+        {
+            ControllableCharacter.CharacterTypeEnum characterType = other.gameObject.GetComponent<ControllableCharacter>().CharacterType;
+            _playerId = other.gameObject.GetComponent<ControllableCharacter>().PlayerId;
+
+            if (PlayerHasRightTool(characterType))
+            {
+                _playerIsInRange = true;
+            }
+        }
     }
 }

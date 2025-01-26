@@ -6,6 +6,7 @@ TagManager:
   tags:
   - BubbleGum
   - PlayerTag
+  - ToolScript
   layers:
   - Default
   - TransparentFX

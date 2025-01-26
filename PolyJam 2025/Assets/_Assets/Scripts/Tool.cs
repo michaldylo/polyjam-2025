@@ -11,6 +11,6 @@ public class Tool : MonoBehaviour
         FeatherDuster
     }
 
-    [SerializeField] private float[] _cleanTime = new float[5];
+    [SerializeField] private float[] _cleanTime = { 4f, 6f, 5f, 3f, 2f };
     public float[] CleanTime => _cleanTime;
 }
