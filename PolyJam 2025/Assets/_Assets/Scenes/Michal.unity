@@ -2817,7 +2817,7 @@ GameObject:
   - component: {fileID: 723424659}
   - component: {fileID: 723424658}
   m_Layer: 5
-  m_Name: Player One Character
+  m_Name: Player One Current Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2839,8 +2839,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -901, y: 479}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -850, y: 420}
+  m_SizeDelta: {x: 264, y: 267}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &723424658
 MonoBehaviour:
@@ -4805,7 +4805,7 @@ GameObject:
   - component: {fileID: 1356197469}
   - component: {fileID: 1356197468}
   m_Layer: 5
-  m_Name: Player Two Character
+  m_Name: Player Two Current Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4827,8 +4827,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 900, y: 479}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 850, y: 420}
+  m_SizeDelta: {x: 264, y: 267}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1356197468
 MonoBehaviour:
