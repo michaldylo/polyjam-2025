@@ -15,7 +15,7 @@ public class RoomController : MonoBehaviour
     {
         for (int i = 0; i < _playerOneRooms.Length; ++i)
         {
-            bool isDirty = Convert.ToBoolean(UnityEngine.Random.Range(0, 3));
+            bool isDirty = Convert.ToBoolean(UnityEngine.Random.Range(0, 4));
             _playerOneRooms[i].GetComponent<Room>().IsDirty = isDirty;
             _playerTwoRooms[i].GetComponent<Room>().IsDirty = isDirty;
 

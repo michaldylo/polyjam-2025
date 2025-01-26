@@ -128,6 +128,7 @@ public class Room : MonoBehaviour
 
         Debug.Log("Cleaning in progress... (" + cleanTime + " s)");
         _bubbles.enabled = true;
+        _character.gameObject.GetComponent<AudioSource>().Play();
         _character.IsBusy = true;
         yield return new WaitForSeconds(cleanTime);
         IsDirty = false;
@@ -135,6 +136,7 @@ public class Room : MonoBehaviour
         ToolIconRenderer.sprite = null;
         Debug.Log("Cleaning complete!");
         _bubbles.enabled = false;
+        _character.gameObject.GetComponent<AudioSource>().Stop();
         _character.IsBusy = false;
     }
 
