@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RoomController : MonoBehaviour
 {
@@ -72,11 +73,11 @@ public class RoomController : MonoBehaviour
 
         if (_playerOneWon)
         {
-            Debug.Log("Player One Won!");
+            SceneManager.LoadSceneAsync("PlayerOneWins");
         }
         else if (_playerTwoWon)
         {
-            Debug.Log("Player Two Won!");
+            SceneManager.LoadSceneAsync("PlayerTwoWins");
         }
     }
 }
