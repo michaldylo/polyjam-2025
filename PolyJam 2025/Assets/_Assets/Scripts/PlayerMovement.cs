@@ -8,28 +8,33 @@ public class PlayerMovement : MonoBehaviour
     private bool _jump = false;
     private bool _crouch = false;
     private int _playerId;
+    private ControllableCharacter _character;
 
     private void Awake()
     {
         _playerId = GetComponent<ControllableCharacter>().PlayerId;
+        _character = GetComponent<ControllableCharacter>();
     }
 
     private void Update()
     {
-        _horizontalMove = Input.GetAxisRaw("Horizontal" + _playerId) * _moveSpeed;
+        if (!_character.IsBusy)
+        {
+            _horizontalMove = Input.GetAxisRaw("Horizontal" + _playerId) * _moveSpeed;
 
-        if (Input.GetButtonDown("Jump"))
-        {
-            _jump = true;
-        }
+            if (Input.GetButtonDown("Jump"))
+            {
+                _jump = true;
+            }
 
-        if (Input.GetButtonDown("Crouch"))
-        {
-            _crouch = true;
-        }
-        else if (Input.GetButtonUp("Crouch"))
-        {
-            _crouch = false;
+            if (Input.GetButtonDown("Crouch"))
+            {
+                _crouch = true;
+            }
+            else if (Input.GetButtonUp("Crouch"))
+            {
+                _crouch = false;
+            }
         }
     }
 

@@ -17,4 +17,5 @@ public class ControllableCharacter : MonoBehaviour
     // public int CharacterId => _characterId;
     [SerializeField] private CharacterTypeEnum _characterType;
     public CharacterTypeEnum CharacterType => _characterType;
+    public bool IsBusy { get; set; }
 }
