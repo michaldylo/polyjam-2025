@@ -793,6 +793,71 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1946877802}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &964436969
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 964436971}
+  - component: {fileID: 964436970}
+  m_Layer: 0
+  m_Name: Character Switcher
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &964436970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 964436969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db0c60b8ec84fa74ca4fa65f33953f11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerOneCharacters:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  _playerTwoCharacters:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  _currentCharacterIcons:
+  - {fileID: 0}
+  - {fileID: 0}
+  _characterIconSprites:
+  - {fileID: 8602116211602517055, guid: 479786345502e524496b23cc08180325, type: 3}
+  - {fileID: -1399429329438684060, guid: 25e89c602ac3ff64b804e14ce13a6f1b, type: 3}
+  - {fileID: 4964869317685371108, guid: f79d824d6c933be44b5203df4d01f0ba, type: 3}
+  - {fileID: -8030576672439078271, guid: fbdbd5a3ebedd0648bcf73b67d22b6b7, type: 3}
+  - {fileID: 2433294883196242628, guid: 303f9fc1585eac34a8ceeeb51ceec37b, type: 3}
+--- !u!4 &964436971
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 964436969}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1140638390
 GameObject:
   m_ObjectHideFlags: 0
@@ -1266,6 +1331,7 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 619394802}
   - {fileID: 1607994505}
+  - {fileID: 964436971}
   - {fileID: 1946877802}
   - {fileID: 441102651}
   - {fileID: 209685394}
