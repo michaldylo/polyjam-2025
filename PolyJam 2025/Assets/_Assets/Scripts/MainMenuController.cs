@@ -7,4 +7,9 @@ public class MainMenuController : MonoBehaviour
     {
         SceneManager.LoadSceneAsync("Michal");
     }
+
+    public void ShowTutorial()
+    {
+        SceneManager.LoadSceneAsync("Tutorial");
+    }
 }
