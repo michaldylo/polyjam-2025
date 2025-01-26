@@ -12,6 +12,12 @@ public class CharacterSwitcher : MonoBehaviour
     [SerializeField] private Image[] _currentCharacterIcons = new Image[2];
     [SerializeField] private Sprite[] _characterIconSprites = new Sprite[5];
 
+    private void Awake()
+    {
+        _changeCharacter1Action = InputSystem.actions.FindAction("ChangeCharacter1");
+        _changeCharacter2Action = InputSystem.actions.FindAction("ChangeCharacter2");
+    }
+    
     private void Start()
     {
         _playerOneCharacters[0].enabled = true;
