@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Mom_Walking_5_0: 9050404039213817990
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

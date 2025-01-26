@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Dad_Walking_4_0: 6869147929932838986
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Daughter_Walking_6_0: 5196853268052642200
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
