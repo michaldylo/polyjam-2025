@@ -364,7 +364,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _controller: {fileID: 170556727}
-  _moveSpeed: 40
+  _moveSpeed: 15
 --- !u!114 &170556727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1277,7 +1277,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _controller: {fileID: 392086308}
-  _moveSpeed: 40
+  _moveSpeed: 15
 --- !u!114 &392086308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4099,7 +4099,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _controller: {fileID: 1093159242}
-  _moveSpeed: 40
+  _moveSpeed: 15
 --- !u!114 &1093159242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4598,7 +4598,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _controller: {fileID: 1110873444}
-  _moveSpeed: 40
+  _moveSpeed: 15
 --- !u!114 &1110873444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5051,7 +5051,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _controller: {fileID: 1127102366}
-  _moveSpeed: 40
+  _moveSpeed: 15
 --- !u!114 &1127102366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5438,7 +5438,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _controller: {fileID: 1216464647}
-  _moveSpeed: 40
+  _moveSpeed: 15
 --- !u!114 &1216464647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6073,7 +6073,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _controller: {fileID: 1305285583}
-  _moveSpeed: 40
+  _moveSpeed: 15
 --- !u!114 &1305285583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7199,7 +7199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _controller: {fileID: 1731560339}
-  _moveSpeed: 40
+  _moveSpeed: 15
 --- !u!114 &1731560339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7744,7 +7744,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _controller: {fileID: 1874423129}
-  _moveSpeed: 40
+  _moveSpeed: 15
 --- !u!114 &1874423129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8452,7 +8452,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _controller: {fileID: 1997158922}
-  _moveSpeed: 40
+  _moveSpeed: 15
 --- !u!114 &1997158922
 MonoBehaviour:
   m_ObjectHideFlags: 0
