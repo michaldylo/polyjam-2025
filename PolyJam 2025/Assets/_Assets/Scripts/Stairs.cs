@@ -15,7 +15,7 @@ public class Stairs : MonoBehaviour
     private InputAction _moveDown2Action;
     private bool _playerIsInRange = false;
     private bool _didFirstRangeCheck = false;
-    private Type _type = Type.Up;
+    [SerializeField] private Type _type = Type.Up;
     private int _playerId;
     [SerializeField] private Vector3 _destination;
     private GameObject _playerCharacter;
