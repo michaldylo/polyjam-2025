@@ -141,12 +141,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   _spriteRenderer: {fileID: 2849595719693702963}
-  _toolIcons:
-  - {fileID: -8030576672439078271, guid: 4322ff97137b3534ca5b49dabc68cb25, type: 3}
-  - {fileID: 4964869317685371108, guid: 8dd2764d9cf8acc409e7b06e210189d3, type: 3}
-  - {fileID: -1399429329438684060, guid: f2383deaccde26a458445abb1acd211c, type: 3}
-  - {fileID: 2433294883196242628, guid: 249ad66cacc95294186cd0b8fed47028, type: 3}
-  - {fileID: 2865286307549434510, guid: 9e798f287e69c2249991a772d09ff0d3, type: 3}
   _toolIconRenderer: {fileID: 4209080783694992532}
 --- !u!61 &6881422614542275379
 BoxCollider2D:
@@ -220,9 +214,9 @@ Transform:
   m_GameObject: {fileID: 9004551850094294802}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0, y: 0.8, z: 0}
+  m_LocalScale: {x: 0.67, y: 0.67, z: 0.67}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2909833325108114742}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
